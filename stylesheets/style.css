@@ -41,5 +41,8 @@
   background-color: BLACK;
 }
 .alert {
+  display: inline-block;
+}
+.hide {
   display: none;
 }

@@ -19,7 +19,13 @@ class Weather.Charts
     $(".alert").html(template({
       msg: msg
     }))
-    $('.alert').show()
+    @show_alert()
+
+  hide_alert: ->
+    $('.alert').addClass("hide")
+
+  show_alert: ->
+    $('.alert').removeClass("hide")
 
   sunny_days: (options) ->
     sunnyModel = new Weather.Models.WeatherQuery(options)
@@ -27,9 +33,15 @@ class Weather.Charts
       success: (percent) =>
         Weather.References.Views.SunAverage = new Weather.Views.SunAverage(model: percent.toJSON())
         $("#sunny_days").html(Weather.References.Views.SunAverage.render().el)
-        $('.alert').hide()
-      error: =>
-        @limit_reached("The limit of the Weather Service have been reach, wait a few seconds and try again.")
+        @hide_alert()
+      error: (model,resp) =>
+        @select_error_msg(resp.status)
+
+  select_error_msg: (status) ->
+    if status == 409
+      @limit_reached("The limit of the Weather Service have been reach, wait a few seconds and try again.")
+    else
+      @limit_reached("No information found.")
 
   create_historic: (options) ->
     historicModel = new Weather.Models.WeatherQuery(options)
@@ -42,9 +54,9 @@ class Weather.Charts
         container = Weather.References.HistoricIds[options.id]
         $("#" + container).html(Weather.References.Views.HistoricView[options.id].render().el)
         @draw_chart("#" + options.id, data.values, data.dates)
-        $('.alert').hide()
-      error: =>
-        @limit_reached("The limit of the Weather Service have been reach, wait a few seconds and try again.")
+        @hide_alert()
+      error: (model,resp) =>
+        @select_error_msg(resp.status)
 
 
   draw_chart: (id, data, labels) ->

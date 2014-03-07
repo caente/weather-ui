@@ -13,7 +13,8 @@ window.Weather =
       }
       Constants:
         {
-          root_url: 'http://54.85.65.194:8080'
+          #root_url: 'http://54.85.65.194:8080'
+          root_url: 'http://localhost:8080'
         }
       temperature_options:
         {

@@ -21,6 +21,7 @@ class Weather.Views.DataView extends Backbone.View
 
 
   update: ->
+    Weather.References.Charts.hide_alert()
     start_date = $("#start_date").val()
     end_date = $("#end_date").val()
     zip = $("#zip").val()
