@@ -27,9 +27,6 @@ class Weather.Router.MainRouter extends Backbone.Router
     $("#update").trigger("click")
 
 
-
-
-
 #    navigator.geolocation.getCurrentPosition(@find_location)
 
 
