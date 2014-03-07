@@ -25,14 +25,6 @@ class Weather.Router.MainRouter extends Backbone.Router
     $("#start_date").val($.datepicker.formatDate('mm/dd/yy', now))
     $("#end_date").val($.datepicker.formatDate('mm/dd/yy', now))
     $("#update").trigger("click")
-#    Weather.References.Charts.update_queries
-#      start_date:  $("#start_date").val(),
-#      end_date: "2014-03-7",
-#      zip: "33020"
-#    Weather.References.Charts.update_graphs()
-
-
-
 
 #    navigator.geolocation.getCurrentPosition(@find_location)
 
