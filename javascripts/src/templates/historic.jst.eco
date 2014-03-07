@@ -1,0 +1,4 @@
+<div class="page-header">
+    <strong class="label"><%= @label %></strong>
+    <canvas id="<%= @chart_id %>" width="600" height="260"></canvas>
+</div>

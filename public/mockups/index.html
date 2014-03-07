@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Challenge</title>
+    <link rel="stylesheet" href="../../stylesheets/vendor/bootstrap.css">
+    <link rel="stylesheet" href="../../stylesheets/vendor/ie10.css">
+    <link rel="stylesheet" href="../../stylesheets/vendor/jquery-ui-1.10.4.custom.css">
+    <link rel="stylesheet" href="../../stylesheets/style.css">
+    <script type="text/javascript" src="../../javascripts/vendor/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="../../javascripts/vendor/bootstrap.js"></script>
+    <script type="text/javascript" src="../../javascripts/vendor/underscore.1.4.4.js"></script>
+    <script type="text/javascript" src="../../javascripts/vendor/backbone.1.0.0.js"></script>
+    <script type="text/javascript" src="../../javascripts/vendor/Chart.js"></script>
+    <script type="text/javascript" src="../../javascripts/vendor/jquery.masonry.js"></script>
+    <script type="text/javascript" src="../../javascripts/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+    <!--<script type="text/javascript"-->
+            <!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4s-ucoVQ_k7CHzc_54k8lFDm_ye3VBFU&sensor=true">-->
+    <!--</script>-->
+    <script type="text/javascript" src="../../javascripts/application.js"></script>
+</head>
+<body>
+<div id="header">
+    <h1>Weather Challenge</h1>
+</div>
+<div id="data">
+    <div class="label">ZIP Code</div>
+    <input type="text">
+    <div class="label">Initial Date</div>
+    <input type="text" class="datepicker">
+
+    <div class="label">Final Dalte</div>
+    <input type="text" class="datepicker">
+</div>
+<div id="content">
+    <div class="weather page-header">
+        <strong class="label">Sunny percent</strong>
+        <h1>75
+            <small>%</small>
+        </h1>
+    </div>
+    <div class="weather page-header">
+        <strong class="label">Temperature behavior</strong>
+        <canvas id="temp_chart" width="600" height="260"></canvas>
+    </div>
+    <div class="weather">
+        <strong class="label">Rain behavior</strong>
+        <canvas id="rain_chart" width="600" height="260"></canvas>
+    </div>
+</div>
+<script type="text/javascript">
+    window.Weather.initialize();
+    $( ".datepicker" ).datepicker()
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<div class="page-header">
+    <strong class="label">Percent of sonny days</strong>
+    <h1><%= @percent_sunny %>
+        <small>%</small>
+    </h1>
+</div>

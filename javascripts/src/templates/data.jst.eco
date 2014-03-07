@@ -1,0 +1,10 @@
+<div class="label">ZIP Code</div>
+<input type="text" id="zip">
+<div class="label">Initial Date</div>
+<input type="text" class="datepicker" id="start_date">
+
+<div class="label">Final Date</div>
+<input type="text" class="datepicker" id="end_date">
+<a id ="update" class="btn btn-primary btn-large">
+    Update
+</a>
