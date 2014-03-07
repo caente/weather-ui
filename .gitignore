@@ -16,7 +16,6 @@
 # Compiled Assets
 /javascripts/application.js
 /javascripts/templates.js
-/stylesheets/style.css
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
