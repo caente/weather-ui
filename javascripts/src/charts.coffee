@@ -33,7 +33,6 @@ class Weather.Charts
       success: (percent) =>
         Weather.References.Views.SunAverage = new Weather.Views.SunAverage(model: percent.toJSON())
         $("#sunny_days").html(Weather.References.Views.SunAverage.render().el)
-        @hide_alert()
       error: (model,resp) =>
         @select_error_msg(resp.status)
 
@@ -54,7 +53,6 @@ class Weather.Charts
         container = Weather.References.HistoricIds[options.id]
         $("#" + container).html(Weather.References.Views.HistoricView[options.id].render().el)
         @draw_chart("#" + options.id, data.values, data.dates)
-        @hide_alert()
       error: (model,resp) =>
         @select_error_msg(resp.status)
 
